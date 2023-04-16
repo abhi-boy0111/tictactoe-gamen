@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "eslint:recommanded",
+    "plugin:react/recommanded",
+    "plugin:react/jsx-runtime"
+  ],
+
+  "env": {
+    "browser": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 2023,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
+  "rules": {
+    "react/prop-type": "off"
+  }
+}
