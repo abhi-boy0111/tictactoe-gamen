@@ -2,17 +2,13 @@ import Board from './components/Board';
 import { useState } from 'react';
 import './style.scss';
 import { claculateWiner } from './winner';
+import StatusMessage from './components/statusMessage';
 
 function App() {
   const [square, setSquare] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(false);
 
   const winner = claculateWiner(square);
-  const nextPlayr = isXNext ? 'X' : '0';
-
-  const statusMessage = winner
-    ? `Winner is ${winner}`
-    : `Next Player is ${nextPlayr}`;
 
   console.log(winner);
 
@@ -33,7 +29,7 @@ function App() {
   };
   return (
     <div className="app">
-      {statusMessage}
+      <StatusMessage winner={winner} isXNext={isXNext} square={square} />
       <Board square={square} handleSquareClick={handleSquareClick} />
     </div>
   );
